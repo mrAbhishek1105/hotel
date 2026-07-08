@@ -1,36 +1,114 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Aurora Haven - Luxury Hotel Website
 
-## Getting Started
+A premium, production-quality luxury hotel website built for **Buildzy** demonstration purposes. This project showcases a five-star resort experience with cinematic design, elegant animations, and world-class user experience.
 
-First, run the development server:
+## Tech Stack
+
+- **Next.js 16** - App Router, Server Components
+- **React 19** - Modern reactive UI
+- **TypeScript** - Strict type safety
+- **Tailwind CSS v4** - Utility-first styling
+- **Framer Motion** - Premium animations
+- **Lucide React** - Beautiful icons
+- **Zod** - Schema validation
+
+## Features
+
+- Full-screen cinematic hero with parallax effects
+- Interactive room gallery with detail modals
+- Multi-step booking system with validation
+- Animated testimonial carousel
+- Pinterest-style image gallery with lightbox
+- Restaurant menu with category filtering
+- FAQ accordion with search
+- Contact form with validation
+- Newsletter subscription
+- Luxury statistics with animated counters
+- Awards & accolades showcase
+- Guest experience timeline
+- Back to top button
+- Responsive design (320px to ultra-wide)
+- SEO optimized with JSON-LD schema
+- WCAG AA accessibility compliant
+- Security headers configured
+
+## Deploy to Vercel
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
+
+### Quick Deploy
+
+1. Fork or clone this repository
+2. Push to your GitHub/GitLab/Bitbucket account
+3. Import the repository into Vercel
+4. Vercel auto-detects Next.js configuration
+5. Click **Deploy**
+
+### Manual Deploy
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run build
+npm run start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Environment Variables
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+No environment variables are required for the base demo. The application uses placeholder data and Unsplash images.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Local Development
 
-## Learn More
+```bash
+npm install
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+src/
+├── app/              # Next.js App Router pages
+├── components/       # Shared UI components
+├── features/         # Feature-based modules
+│   ├── hero/         # Hero section
+│   ├── about/        # About section
+│   ├── rooms/        # Rooms & suites
+│   ├── amenities/    # Amenities grid
+│   ├── experience/   # Guest experience timeline
+│   ├── gallery/      # Image gallery with lightbox
+│   ├── restaurant/   # Dining & menu
+│   ├── testimonials/ # Animated carousel
+│   ├── faq/          # FAQ accordion
+│   ├── booking/      # Multi-step booking
+│   ├── contact/      # Contact form & info
+│   ├── awards/       # Stats & awards
+│   ├── navbar/       # Sticky navigation
+│   └── footer/       # Footer with newsletter
+├── hooks/            # Custom React hooks
+├── lib/              # Utility functions
+├── types/            # TypeScript types
+├── constants/        # Application data
+└── schemas/          # Zod validation schemas
+```
 
-## Deploy on Vercel
+## Performance Targets
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Lighthouse Performance: 100
+- Lighthouse Accessibility: 100
+- Lighthouse SEO: 100
+- Lighthouse Best Practices: 100
+- Core Web Vitals: Excellent
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Build
+
+```bash
+npm run build
+```
+
+The build output will be in the `.next` folder, ready for deployment.
+
+---
+
+Built for **Buildzy** | [buildzy.ai](https://buildzy.ai)
