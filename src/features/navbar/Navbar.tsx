@@ -25,14 +25,18 @@ export function Navbar() {
 
   const handleNavClick = (href: string) => {
     setMobileMenuOpen(false);
-    if (href === "/") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-      return;
-    }
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+    document.body.style.overflow = ""; // Immediately reset overflow so scroll works
+    
+    setTimeout(() => {
+      if (href === "/") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        return;
+      }
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 50);
   };
 
   return (
@@ -103,11 +107,7 @@ export function Navbar() {
               <Button
                 variant="gold"
                 size="sm"
-                onClick={() =>
-                  document
-                    .querySelector("#rooms")
-                    ?.scrollIntoView({ behavior: "smooth" })
-                }
+                onClick={() => handleNavClick("#rooms")}
                 className="text-xs"
               >
                 Book Now
@@ -116,16 +116,14 @@ export function Navbar() {
           </div>
 
           {/* Mobile Menu Button */}
-          <motion.button
-            className="lg:hidden p-2 text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded-lg"
+          <button
+            className="lg:hidden p-2 text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded-lg cursor-pointer relative z-50"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileMenuOpen}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </motion.button>
+          </button>
         </div>
       </nav>
 
@@ -160,12 +158,7 @@ export function Navbar() {
                 <Button
                   variant="gold"
                   className="w-full"
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                    document
-                      .querySelector("#rooms")
-                      ?.scrollIntoView({ behavior: "smooth" });
-                  }}
+                  onClick={() => handleNavClick("#rooms")}
                 >
                   Book Now
                 </Button>
